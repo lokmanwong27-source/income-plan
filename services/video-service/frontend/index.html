@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Video Creator — Professional Videos in Minutes</title>
+<style>
+  :root {
+    --primary: #6c5ce7;
+    --bg: #0d0d1a;
+    --card: #16163a;
+    --text: #f8f9fa;
+    --muted: #868e96;
+    --accent: #e17055;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .hero {
+    padding: 100px 0 60px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(108,92,231,0.1) 0%, transparent 100%);
+  }
+  .hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+  }
+  .hero .gradient {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 20px;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; padding-bottom: 80px; }
+  .plan-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 40px 32px;
+    border: 1px solid rgba(108,92,231,0.2);
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .plan-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+  .plan-card.featured {
+    border-color: var(--primary);
+    background: linear-gradient(180deg, rgba(108,92,231,0.1), var(--card));
+    transform: scale(1.05);
+  }
+  .plan-card.featured:hover { transform: scale(1.05) translateY(-4px); }
+  .plan-name { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .plan-price { font-size: 48px; font-weight: 800; margin: 16px 0; }
+  .plan-price span { font-size: 18px; font-weight: 400; color: var(--muted); }
+  .plan-features { list-style: none; margin: 24px 0; text-align: left; }
+  .plan-features li { padding: 8px 0; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+  .plan-features li::before { content: "✓"; color: #2ecc71; font-weight: 700; }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    transition: all 0.2s;
+  }
+  .btn:hover { background: #5a4bd1; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; border: 1px solid rgba(255,255,255,0.2); }
+  .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+  .how-it-works { padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+  .step { text-align: center; }
+  .step-number {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--primary); display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 20px;
+    margin: 0 auto 16px;
+  }
+  .step h3 { font-size: 16px; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: var(--muted); }
+  .cta-section { padding: 80px 0; text-align: center; }
+  .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+  footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: var(--muted); font-size: 14px; }
+  @media (max-width: 768px) {
+    .pricing-grid, .steps { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 36px; }
+    .plan-card.featured { transform: none; }
+  }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="container">
+    <h1>AI-Powered <span class="gradient">Video Creation</span></h1>
+    <p>Submit a script. Get a professional video delivered to your inbox. No skills required.</p>
+    <a href="#pricing" class="btn" style="width: auto; padding: 16px 40px;">See Plans & Pricing</a>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 28px; font-weight: 700;">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Submit Your Script</h3>
+        <p>Tell us about your video — script, style, and preferences.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>We Generate It</h3>
+        <p>Our AI creates a professional video with animations and effects.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Review & Approve</h3>
+        <p>Get a preview. Request changes if needed. We iterate until it's perfect.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Download & Share</h3>
+        <p>Receive the final video. Use it on social media, your website, or ads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 28px; font-weight: 700; margin-bottom: 16px;">Simple Pricing</h2>
+    <p style="text-align: center; color: var(--muted); margin-bottom: 16px;">One-time payment. No subscriptions. You own the video.</p>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-name">Basic</div>
+        <div class="plan-price">$9 <span>/video</span></div>
+        <ul class="plan-features">
+          <li>15-second social media clip</li>
+          <li>Vertical or square format</li>
+          <li>Basic animations</li>
+          <li>Delivery within 24 hours</li>
+          <li>1 revision</li>
+        </ul>
+        <a href="order.html?plan=basic" class="btn btn-secondary">Get Started</a>
+      </div>
+      <div class="plan-card featured">
+        <div style="color: var(--primary); font-size: 13px; font-weight: 600; margin-bottom: 8px;">MOST POPULAR</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">$29 <span>/video</span></div>
+        <ul class="plan-features">
+          <li>30-second branded video</li>
+          <li>Landscape + vertical formats</li>
+          <li>Custom colors & branding</li>
+          <li>Background music included</li>
+          <li>Delivery within 12 hours</li>
+          <li>3 revisions</li>
+        </ul>
+        <a href="order.html?plan=pro" class="btn">Get Started</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Premium</div>
+        <div class="plan-price">$79 <span>/video</span></div>
+        <ul class="plan-features">
+          <li>60-second full production</li>
+          <li>All formats included</li>
+          <li>Full branding package</li>
+          <li>AI voiceover narration</li>
+          <li>Delivery within 6 hours</li>
+          <li>Unlimited revisions</li>
+        </ul>
+        <a href="order.html?plan=premium" class="btn btn-secondary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" style="background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(225,112,85,0.1));">
+  <div class="container">
+    <h2>Ready to Create Your Video?</h2>
+    <p style="color: var(--muted); margin-bottom: 32px;">No technical skills needed. Just tell us what you need.</p>
+    <a href="order.html" class="btn" style="width: auto; padding: 16px 48px;">Start Your Order →</a>
+  </div>
+</section>
+
+<footer><div class="container">Powered by Codex AI — Professional video, automated.</div></footer>
+</body>
+</html>

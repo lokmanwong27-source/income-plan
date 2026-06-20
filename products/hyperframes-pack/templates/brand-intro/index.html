@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Brand Intro</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+<style>
+  :root {
+    --primary: #6c5ce7;
+    --secondary: #a29bfe;
+    --bg: #0a0a1a;
+    --text: #ffffff;
+    --accent: #e17055;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  #scene {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Background particles */
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--secondary);
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  /* Center ring */
+  .ring {
+    position: absolute;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .ring-1 { width: 200px; height: 200px; }
+  .ring-2 { width: 280px; height: 280px; }
+  .ring-3 { width: 360px; height: 360px; }
+
+  /* Logo area */
+  .logo-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .logo-icon {
+    font-size: 72px;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .brand-name {
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--text);
+    opacity: 0;
+    letter-spacing: -2px;
+    margin-top: 16px;
+  }
+
+  .brand-tagline {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--secondary);
+    opacity: 0;
+    margin-top: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  /* Gradient sweep */
+  .gradient-sweep {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(108,92,231,0.15) 0%, transparent 70%);
+    opacity: 0;
+  }
+</style>
+</head>
+<body>
+<div id="scene">
+  <!-- Particles -->
+  <div id="particles"></div>
+
+  <!-- Rings -->
+  <div class="ring ring-1" id="ring1"></div>
+  <div class="ring ring-2" id="ring2"></div>
+  <div class="ring ring-3" id="ring3"></div>
+
+  <!-- Gradient -->
+  <div class="gradient-sweep" id="gradient"></div>
+
+  <!-- Logo -->
+  <div class="logo-wrapper">
+    <div class="logo-icon" id="logoIcon">✦</div>
+    <div class="brand-name" id="brandName">YOUR BRAND</div>
+    <div class="brand-tagline" id="tagline">MAKE IT MEMORABLE</div>
+  </div>
+</div>
+
+<script>
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+  // Create particles
+  const particlesContainer = document.getElementById('particles')
+  for (let i = 0; i < 60; i++) {
+    const p = document.createElement('div')
+    p.className = 'particle'
+    p.style.left = Math.random() * 1920 + 'px'
+    p.style.top = Math.random() * 1080 + 'px'
+    p.style.animationDelay = Math.random() * 2 + 's'
+    particlesContainer.appendChild(p)
+  }
+
+  // Timeline
+  tl.to('.particle', {
+    opacity: 0.6,
+    duration: 0.8,
+    stagger: 0.02,
+    ease: 'power2.out',
+  })
+  .to('.gradient-sweep', {
+    opacity: 1,
+    scale: 2,
+    duration: 1.2,
+    ease: 'power2.out',
+  }, '-=0.4')
+  .to('.ring', {
+    opacity: 0.3,
+    scale: 1,
+    duration: 1,
+    stagger: 0.15,
+    ease: 'elastic.out(1, 0.5)',
+  }, '-=0.6')
+  .to('#logoIcon', {
+    opacity: 1,
+    scale: 1,
+    duration: 0.6,
+    ease: 'back.out(2)',
+  }, '-=0.3')
+  .to('#brandName', {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: 'power2.out',
+  }, '-=0.2')
+  .to('#tagline', {
+    opacity: 0.7,
+    y: 0,
+    duration: 0.5,
+    ease: 'power2.out',
+  }, '-=0.1')
+
+  // Particle animation
+  gsap.to('.particle', {
+    y: 'random(-100, 100)',
+    x: 'random(-100, 100)',
+    opacity: 0,
+    duration: 'random(2, 4)',
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut',
+    stagger: { each: 0.05, from: 'random' },
+  })
+
+  // Ring rotation
+  gsap.to('#ring1', { rotation: 360, duration: 20, repeat: -1, ease: 'none' })
+  gsap.to('#ring2', { rotation: -360, duration: 30, repeat: -1, ease: 'none' })
+  gsap.to('#ring3', { rotation: 360, duration: 40, repeat: -1, ease: 'none' })
+</script>
+</body>
+</html>

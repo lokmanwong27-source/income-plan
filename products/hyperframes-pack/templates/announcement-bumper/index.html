@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcement Bumper</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+<style>
+  :root { --primary: #6c5ce7; --bg: #0a0a1a; --text: #fff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); overflow: hidden; font-family: -apple-system, sans-serif; }
+  #scene { width: 1920px; height: 1080px; position: relative; display: flex; align-items: center; justify-content: center; }
+  .flash-bg { position: absolute; inset: 0; background: var(--primary); opacity: 0; }
+  .announcement { font-size: 96px; font-weight: 800; color: var(--text); opacity: 0; text-align: center; letter-spacing: -3px; z-index: 2; }
+  .sub { font-size: 32px; color: rgba(255,255,255,0.7); opacity: 0; text-align: center; margin-top: 24px; z-index: 2; letter-spacing: 2px; text-transform: uppercase; }
+  .accent-line { width: 0; height: 4px; background: white; position: absolute; bottom: 40%; z-index: 2; }
+</style>
+</head>
+<body>
+<div id="scene">
+  <div class="flash-bg" id="flash"></div>
+  <div class="accent-line" id="line"></div>
+  <div class="announcement" id="text">Big News</div>
+  <div class="sub" id="subtitle">COMING SOON</div>
+</div>
+<script>
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+  tl.to('#flash', { opacity: 1, duration: 0.15 })
+  .to('#flash', { opacity: 0, duration: 0.3 })
+  .to('#line', { width: 400, duration: 0.4, ease: 'power2.out' }, '-=0.1')
+  .to('#text', { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)' }, '-=0.2')
+  .to('#subtitle', { opacity: 0.8, y: 0, duration: 0.4 }, '-=0.1')
+</script>
+</body>
+</html>

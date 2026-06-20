@@ -1,0 +1,27 @@
+{
+  "name": "Modern Brand Intro",
+  "description": "5-second animated brand intro with particle effects and ring animation",
+  "version": "1.0.0",
+  "duration": 5,
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "variables": {
+    "brand_name": {
+      "type": "string",
+      "default": "YOUR BRAND",
+      "description": "Your brand name"
+    },
+    "tagline": {
+      "type": "string",
+      "default": "MAKE IT MEMORABLE",
+      "description": "Brand tagline or slogan"
+    },
+    "primary_color": {
+      "type": "color",
+      "default": "#6c5ce7",
+      "description": "Primary brand color"
+    }
+  }
+}

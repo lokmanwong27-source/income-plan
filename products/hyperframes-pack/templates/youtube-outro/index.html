@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Outro</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+<style>
+  :root { --primary: #ff0000; --bg: #0f0f0f; --text: #fff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); overflow: hidden; font-family: -apple-system, sans-serif; }
+  #scene { width: 1920px; height: 1080px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px; }
+  .thanks { font-size: 56px; font-weight: 800; color: var(--text); opacity: 0; margin-bottom: 48px; }
+  .video-suggestions { display: flex; gap: 24px; margin-bottom: 48px; }
+  .video-thumb { width: 280px; height: 160px; border-radius: 12px; background: #2a2a2a; opacity: 0; display: flex; align-items: center; justify-content: center; font-size: 36px; flex-direction: column; gap: 8px; }
+  .video-thumb span { font-size: 14px; font-weight: 600; }
+  .subscribe-btn { display: inline-flex; align-items: center; gap: 12px; padding: 20px 48px; background: var(--primary); border-radius: 50px; font-size: 24px; font-weight: 700; color: white; opacity: 0; }
+  .subscribe-btn svg { width: 28px; height: 28px; fill: white; }
+  .channel-name { font-size: 18px; color: #aaa; opacity: 0; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div id="scene">
+  <div class="thanks" id="thanks">Thanks for Watching!</div>
+  <div class="video-suggestions">
+    <div class="video-thumb" id="vid1">▶<span>Next Video</span></div>
+    <div class="video-thumb" id="vid2">▶<span>Popular Video</span></div>
+    <div class="video-thumb" id="vid3">▶<span>Recent Upload</span></div>
+  </div>
+  <div class="subscribe-btn" id="subscribe">
+    <svg viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+    Subscribe
+  </div>
+  <div class="channel-name" id="channel">@yourchannel</div>
+</div>
+<script>
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+  tl.to('#thanks', { opacity: 1, y: 0, duration: 0.6 })
+  .to('.video-thumb', { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 }, '-=0.3')
+  .to('#subscribe', { opacity: 1, scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)' }, '-=0.2')
+  .to('#channel', { opacity: 0.7, y: 0, duration: 0.4 }, '-=0.2')
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Social Media Promo</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+<style>
+  :root {
+    --primary: #6c5ce7;
+    --bg: #0f0f23;
+    --text: #ffffff;
+    --card: #1a1a3e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  #scene {
+    width: 1080px;
+    height: 1920px;
+    position: relative;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .headline {
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    opacity: 0;
+    letter-spacing: -1px;
+  }
+
+  .highlight {
+    background: linear-gradient(135deg, var(--primary), #e17055);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtext {
+    font-size: 28px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 48px;
+    opacity: 0;
+    line-height: 1.4;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 28px 56px;
+    background: var(--primary);
+    border-radius: 16px;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    opacity: 0;
+    align-self: flex-start;
+  }
+
+  .cta-arrow {
+    font-size: 28px;
+    transition: transform 0.3s;
+  }
+
+  .deco-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+    background: var(--primary);
+  }
+
+  .deco-1 { width: 400px; height: 400px; top: -100px; right: -100px; }
+  .deco-2 { width: 300px; height: 300px; bottom: -50px; left: -80px; }
+  .deco-3 { width: 200px; height: 200px; bottom: 300px; right: 50px; }
+</style>
+</head>
+<body>
+<div id="scene">
+  <!-- Decorative circles -->
+  <div class="deco-circle deco-1"></div>
+  <div class="deco-circle deco-2"></div>
+  <div class="deco-circle deco-3"></div>
+
+  <!-- Content -->
+  <div class="headline" id="headline">
+    Transform Your<br>
+    <span class="highlight">Digital Presence</span>
+  </div>
+  <div class="subtext" id="subtext">
+    Build stunning link-in-bio pages in minutes.<br>
+    No code. No hassle. Just results.
+  </div>
+  <a href="#" class="cta-button" id="cta">
+    Get Started Free
+    <span class="cta-arrow" id="arrow">→</span>
+  </a>
+</div>
+
+<script>
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+  tl.from('.deco-circle', {
+    scale: 0,
+    opacity: 0,
+    duration: 1.2,
+    stagger: 0.2,
+    ease: 'elastic.out(1, 0.6)',
+  })
+  .to('#headline', {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+  }, '-=0.6')
+  .to('#subtext', {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+  }, '-=0.3')
+  .to('#cta', {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: 'back.out(1.5)',
+  }, '-=0.2')
+  .to('#arrow', {
+    x: 8,
+    duration: 0.6,
+    repeat: -1,
+    yoyo: true,
+    ease: 'power1.inOut',
+  })
+</script>
+</body>
+</html>
