@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React UI Component Pack – Live Preview</title>
+  <link rel="stylesheet" href="src/styles.css">
+  <style>
+    body { padding: 32px; max-width: 960px; margin: 0 auto; background: #f8f9fa; }
+    h1 { font-size: 28px; margin-bottom: 4px; }
+    .subtitle { color: #6c757d; margin-bottom: 32px; font-size: 15px; }
+    .section { margin-bottom: 48px; }
+    .section h2 { font-size: 20px; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; margin-bottom: 20px; }
+    .component-grid { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .component-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .label { font-size: 12px; color: #868e96; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 16px; }
+    .demo-section { padding: 16px; background: white; border-radius: 8px; }
+    .demo-section h3 { margin: 0 0 12px; font-size: 14px; color: #495057; }
+    .badge-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .progress-wrapper { width: 280px; }
+    .skeleton-wrapper { width: 100%; }
+    .editor-note { background: #fff9e6; border: 1px solid #ffe082; border-radius: 8px; padding: 16px; margin: 40px 0; font-size: 14px; color: #5d4037; }
+    :root { --ui-primary: #6c5ce7; --ui-radius: 8px; }
+  </style>
+</head>
+<body>
+
+<header style="margin-bottom: 40px;">
+  <h1>🧩 React UI Component Pack</h1>
+  <p class="subtitle">15 production-ready components · Zero-runtime-dependency · CSS variable theming</p>
+  <p style="font-size: 13px; color: #868e96;">
+    Designed for React 16.8+ · Copy-paste friendly · MIT license
+  </p>
+</header>
+
+<!-- Button -->
+<div class="section">
+  <h2>Button</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div class="component-grid">
+        <button style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-weight:600;border-radius:8px;border:none;background:#6c5ce7;color:white;cursor:pointer;">Primary</button>
+        <button style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-weight:600;border-radius:8px;border:1px solid #dee2e6;background:#f1f3f5;color:#212529;cursor:pointer;">Secondary</button>
+        <button style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-weight:600;border-radius:8px;border:none;background:transparent;color:#6c5ce7;cursor:pointer;">Ghost</button>
+        <button style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-weight:600;border-radius:8px;border:none;background:#e03131;color:white;cursor:pointer;">Danger</button>
+        <button style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-weight:600;border-radius:8px;border:none;background:#6c5ce7;color:white;cursor:not-allowed;opacity:0.5;" disabled>Disabled</button>
+      </div>
+      <p style="font-size:12px;color:#868e96;margin-top:12px;">Variants: primary · secondary · ghost · danger · loading state · sm/md/lg sizes</p>
+    </div>
+  </div>
+</div>
+
+<!-- Card -->
+<div class="section">
+  <h2>Card</h2>
+  <div class="card" style="display:flex;gap:16px;">
+    <div style="flex:1;padding:20px;border:1px solid #e9ecef;border-radius:12px;">
+      <div style="font-weight:700;margin-bottom:8px;">Card Header</div>
+      <p style="margin:0;font-size:14px;color:#495057;">Card body content goes here.</p>
+      <hr style="margin:12px 0;border:0;border-top:1px solid #e9ecef;">
+      <div style="font-size:13px;color:#868e96;">Card Footer</div>
+    </div>
+    <div style="flex:1;padding:20px;border:1px solid #e9ecef;border-radius:12px;cursor:pointer;">
+      <div style="font-weight:700;margin-bottom:8px;">Hover Card</div>
+      <p style="margin:0;font-size:14px;color:#495057;">Hover me! Includes header, body, footer slots.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="section">
+  <h2>Modal</h2>
+  <div class="card">
+    <div class="demo-section">
+      <button onclick="alert('Modal: controlled via open prop + onClose. Press Escape or click overlay to close.')" style="padding:10px 20px;border-radius:8px;border:none;background:#6c5ce7;color:white;font-weight:600;cursor:pointer;">Open Modal Demo</button>
+      <p style="font-size:12px;color:#868e96;margin-top:8px;">Features: Escape to close · overlay click to close · focus trap · scroll lock · keyboard support</p>
+    </div>
+  </div>
+</div>
+
+<!-- Dropdown -->
+<div class="section">
+  <h2>Dropdown</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div style="display:flex;gap:8px;">
+        <div style="position:relative;display:inline-block;">
+          <button style="padding:8px 16px;border-radius:6px;border:1px solid #dee2e6;background:white;cursor:pointer;">Options ▾</button>
+        </div>
+        <div style="position:relative;display:inline-block;">
+          <button style="padding:8px 16px;border-radius:6px;border:1px solid #dee2e6;background:white;cursor:pointer;">Actions ▾</button>
+        </div>
+      </div>
+      <p style="font-size:12px;color:#868e96;margin-top:8px;">Alignment: left/right · Items with click handlers · Danger items · Dividers</p>
+    </div>
+  </div>
+</div>
+
+<!-- Input + Select -->
+<div class="section">
+  <h2>Input &amp; Select</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;">
+        <div>
+          <div class="label">Text Input</div>
+          <input type="text" placeholder="Enter your email" value="hello@example.com" style="width:260px;padding:10px 14px;border-radius:8px;border:1px solid #dee2e6;font-size:14px;font-family:inherit;">
+        </div>
+        <div>
+          <div class="label">With Error</div>
+          <input type="text" placeholder="Required field" value="" style="width:260px;padding:10px 14px;border-radius:8px;border:1px solid #e03131;font-size:14px;font-family:inherit;">
+          <p style="margin:4px 0 0;font-size:12px;color:#e03131;">This field is required</p>
+        </div>
+        <div>
+          <div class="label">Select</div>
+          <select style="width:200px;padding:10px 14px;border-radius:8px;border:1px solid #dee2e6;font-size:14px;font-family:inherit;background:white;">
+            <option>Option A</option>
+            <option>Option B</option>
+            <option>Option C</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Badge + Avatar -->
+<div class="section">
+  <h2>Badge &amp; Avatar</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div class="component-grid" style="margin-bottom:16px;">
+        <span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;background:#6c5ce7;color:white;">Primary</span>
+        <span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;background:#2e7d32;color:white;">Success</span>
+        <span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;background:#f57c00;color:white;">Warning</span>
+        <span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;background:#d32f2f;color:white;">Danger</span>
+        <span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;background:#e9ecef;color:#495057;">Default</span>
+        <span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;background:#6c5ce7;color:white;">3+ new</span>
+      </div>
+      <div class="component-grid">
+        <div style="width:48px;height:48px;border-radius:50%;background:#6c5ce7;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;">JD</div>
+        <div style="position:relative;display:inline-block;">
+          <div style="width:48px;height:48px;border-radius:50%;background:#e9ecef;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#495057;">AB</div>
+          <div style="position:absolute;bottom:0;right:0;width:14px;height:14px;border-radius:50%;background:#2e7d32;border:2px solid white;"></div>
+        </div>
+        <div style="position:relative;display:inline-block;">
+          <div style="width:48px;height:48px;border-radius:50%;background:#e9ecef;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#495057;">KL</div>
+          <div style="position:absolute;bottom:0;right:0;width:14px;height:14px;border-radius:50%;background:#d32f2f;border:2px solid white;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Table -->
+<div class="section">
+  <h2>Table</h2>
+  <div class="card">
+    <div class="demo-section">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e9ecef;">
+            <th style="text-align:left;padding:10px 12px;font-weight:600;">Name</th>
+            <th style="text-align:left;padding:10px 12px;font-weight:600;">Status</th>
+            <th style="text-align:right;padding:10px 12px;font-weight:600;">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #e9ecef;"><td style="padding:10px 12px;">Alice Chen</td><td style="padding:10px 12px;"><span style="background:#e8f5e9;color:#2e7d32;padding:2px 8px;border-radius:4px;font-size:12px;">Active</span></td><td style="padding:10px 12px;text-align:right;">$249</td></tr>
+          <tr style="border-bottom:1px solid #e9ecef;"><td style="padding:10px 12px;">Bob Smith</td><td style="padding:10px 12px;"><span style="background:#fff3e0;color:#f57c00;padding:2px 8px;border-radius:4px;font-size:12px;">Pending</span></td><td style="padding:10px 12px;text-align:right;">$99</td></tr>
+          <tr><td style="padding:10px 12px;">Carol Davis</td><td style="padding:10px 12px;"><span style="background:#fbe9e7;color:#d32f2f;padding:2px 8px;border-radius:4px;font-size:12px;">Inactive</span></td><td style="padding:10px 12px;text-align:right;">$0</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:#868e96;margin-top:8px;">Features: sortable columns · filter · pagination · responsive scroll</p>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="section">
+  <h2>Toast / Notification</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;">
+        <button onclick="showToast('success')" style="padding:8px 16px;border-radius:6px;border:none;background:#2e7d32;color:white;cursor:pointer;">Success</button>
+        <button onclick="showToast('error')" style="padding:8px 16px;border-radius:6px;border:none;background:#d32f2f;color:white;cursor:pointer;">Error</button>
+        <button onclick="showToast('info')" style="padding:8px 16px;border-radius:6px;border:none;background:#1976d2;color:white;cursor:pointer;">Info</button>
+        <button onclick="showToast('warning')" style="padding:8px 16px;border-radius:6px;border:none;background:#f57c00;color:white;cursor:pointer;">Warning</button>
+      </div>
+      <p style="font-size:12px;color:#868e96;margin:0;">Auto-dismiss · 4 positions · useToast hook included</p>
+    </div>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="section">
+  <h2>Tabs</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div style="display:flex;border-bottom:2px solid #e9ecef;">
+        <button style="padding:10px 20px;border:none;background:none;font-weight:600;color:#6c5ce7;cursor:pointer;border-bottom:2px solid #6c5ce7;margin-bottom:-2px;">Overview</button>
+        <button style="padding:10px 20px;border:none;background:none;color:#495057;cursor:pointer;">Details</button>
+        <button style="padding:10px 20px;border:none;background:none;color:#495057;cursor:pointer;">Settings</button>
+      </div>
+      <p style="font-size:13px;color:#495057;margin-top:16px;">Tab content area. Two variants: underline (shown) and pills.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Toggle -->
+<div class="section">
+  <h2>Toggle / Switch</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div class="component-grid">
+        <div style="width:44px;height:24px;border-radius:12px;background:#6c5ce7;position:relative;cursor:pointer;">
+          <div style="width:20px;height:20px;border-radius:50%;background:white;position:absolute;top:2px;right:2px;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></div>
+        </div>
+        <span style="font-size:14px;">Dark Mode</span>
+        <div style="width:44px;height:24px;border-radius:12px;background:#ced4da;position:relative;cursor:pointer;">
+          <div style="width:20px;height:20px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></div>
+        </div>
+        <span style="font-size:14px;color:#868e96;">Notifications</span>
+      </div>
+      <p style="font-size:12px;color:#868e96;margin-top:8px;">Controlled/uncontrolled · sm/md/lg · disabled · label</p>
+    </div>
+  </div>
+</div>
+
+<!-- Tooltip -->
+<div class="section">
+  <h2>Tooltip</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div class="component-grid">
+        <span style="border-bottom:1px dashed #adb5bd;cursor:help;font-size:14px;" title="Tooltip on top">Hover top</span>
+        <span style="border-bottom:1px dashed #adb5bd;cursor:help;font-size:14px;" title="Tooltip on bottom">Hover bottom</span>
+        <span style="border-bottom:1px dashed #adb5bd;cursor:help;font-size:14px;" title="Tooltip with arrow">Hover me</span>
+      </div>
+      <p style="font-size:12px;color:#868e96;margin-top:8px;">Placements: top · bottom · left · right · configurable delay · arrow indicator</p>
+    </div>
+  </div>
+</div>
+
+<!-- Progress + Skeleton -->
+<div class="section">
+  <h2>Progress &amp; Skeleton</h2>
+  <div class="card">
+    <div class="demo-section">
+      <div class="component-row">
+        <div class="label">Progress (42%)</div>
+        <div style="width:300px;height:10px;border-radius:5px;background:#e9ecef;overflow:hidden;">
+          <div style="width:42%;height:100%;border-radius:5px;background:#6c5ce7;transition:width 0.4s ease;"></div>
+        </div>
+      </div>
+      <div class="component-row">
+        <div class="label">Progress with shimmer (68%)</div>
+        <div style="width:300px;height:10px;border-radius:5px;background:#e9ecef;overflow:hidden;">
+          <div style="width:68%;height:100%;border-radius:5px;background:#2e7d32;position:relative;overflow:hidden;">
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);animation:shimmer 2s infinite;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="component-row">
+        <div class="label">Skeleton Loading</div>
+        <div style="width:300px;">
+          <div style="height:24px;width:60%;border-radius:4px;background:linear-gradient(90deg,#e9ecef 25%,#f1f3f5 50%,#e9ecef 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;margin-bottom:8px;"></div>
+          <div style="height:14px;width:100%;border-radius:4px;background:linear-gradient(90deg,#e9ecef 25%,#f1f3f5 50%,#e9ecef 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;margin-bottom:6px;"></div>
+          <div style="height:14px;width:80%;border-radius:4px;background:linear-gradient(90deg,#e9ecef 25%,#f1f3f5 50%,#e9ecef 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;margin-bottom:6px;"></div>
+          <div style="height:14px;width:40%;border-radius:4px;background:linear-gradient(90deg,#e9ecef 25%,#f1f3f5 50%,#e9ecef 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="editor-note">
+  <strong>📦 What's included:</strong><br>
+  15 production-ready React components with inline styles + CSS variable theming.<br>
+  Zero runtime dependencies · React 16.8+ compatible · SSR safe · MIT license<br>
+  <br>
+  <strong>💡 Perfect for:</strong> SaaS dashboards, admin panels, landing pages, internal tools, MVPs, and design systems.<br>
+  <br>
+  <strong>🎨 Theming:</strong> Customize colors, border radius, and fonts via CSS variables. No CSS-in-JS lock-in.
+</div>
+
+<footer style="margin-top:48px;padding-top:24px;border-top:1px solid #e9ecef;font-size:13px;color:#868e96;text-align:center;">
+  React UI Component Pack by Codex · MIT License · <a href="README.md">View Documentation</a>
+</footer>
+
+<style>
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+</style>
+
+<script>
+function showToast(type) {
+  const toast = document.createElement('div')
+  const colors = { success: '#2e7d32', error: '#d32f2f', info: '#1976d2', warning: '#f57c00' }
+  const icons = { success: '✓', error: '✕', info: 'ℹ', warning: '⚠' }
+  Object.assign(toast.style, {
+    position: 'fixed', top: '24px', right: '24px', zIndex: 2000,
+    display: 'flex', alignItems: 'center', gap: '10px',
+    padding: '12px 20px', borderRadius: '8px', fontSize: '14px', fontWeight: 500,
+    background: colors[type], color: 'white', boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    animation: 'toastIn 0.3s ease',
+  })
+  toast.innerHTML = `${icons[type]} This is a ${type} toast message`
+  document.body.appendChild(toast)
+  setTimeout(() => {
+    toast.style.opacity = '0'
+    toast.style.transform = 'translateX(50px)'
+    toast.style.transition = 'all 0.3s ease'
+    setTimeout(() => toast.remove(), 300)
+  }, 3000)
+}
+</script>
+
+</body>
+</html>

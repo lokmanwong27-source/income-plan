@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Products — Lnk.Flow Studio</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #212529; padding: 40px 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 32px; margin-bottom: 4px; }
+  .subtitle { color: #6c757d; margin-bottom: 40px; font-size: 16px; }
+  .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .product-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .thumb { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .thumb.react { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); }
+  .thumb.icons { background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%); }
+  .thumb.video { background: linear-gradient(135deg, #0a0a1a 0%, #2d2d5e 100%); }
+  .card-body { padding: 24px; }
+  .card-body h2 { font-size: 18px; margin-bottom: 6px; }
+  .card-body p { font-size: 14px; color: #6c757d; margin-bottom: 12px; line-height: 1.5; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tag { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: #e9ecef; color: #495057; font-weight: 600; }
+  .price { font-size: 20px; font-weight: 700; color: #6c5ce7; }
+  .price span { font-size: 13px; font-weight: 400; color: #868e96; }
+  .btn { display: inline-block; padding: 8px 20px; border-radius: 8px; background: #6c5ce7; color: white; text-decoration: none; font-size: 14px; font-weight: 600; margin-top: 8px; }
+  .btn:hover { background: #5a4bd1; }
+  .btn-outline { background: transparent; color: #6c5ce7; border: 1px solid #6c5ce7; margin-left: 8px; }
+  .btn-outline:hover { background: #f3f0ff; }
+  footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #e9ecef; font-size: 13px; color: #868e96; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📦 Digital Products</h1>
+  <p class="subtitle">Production-ready assets for developers, designers, and creators</p>
+</header>
+
+<div class="products">
+  <div class="product-card">
+    <div class="thumb react">🧩</div>
+    <div class="card-body">
+      <h2>React UI Component Pack</h2>
+      <p>15 production-ready React components. Button, Card, Modal, Tabs, Toast, Tooltip, and more. CSS variable theming. Zero runtime deps.</p>
+      <div class="tags">
+        <span class="tag">React 16.8+</span>
+        <span class="tag">Zero deps</span>
+        <span class="tag">MIT</span>
+        <span class="tag">15 components</span>
+      </div>
+      <div class="price">$19 <span>/ bundle</span></div>
+      <a href="react-components/preview.html" class="btn">Preview</a>
+      <a href="react-components/" class="btn-outline btn">Details</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="thumb icons">🎨</div>
+    <div class="card-body">
+      <h2>Premium SVG Icon Pack</h2>
+      <p>30 handcrafted SVG icons in 3 categories: Business, Social, Tech. Clean line style, fully editable.</p>
+      <div class="tags">
+        <span class="tag">SVG</span>
+        <span class="tag">30 icons</span>
+        <span class="tag">MIT</span>
+        <span class="tag">Editable</span>
+      </div>
+      <div class="price">$9 <span>– $19 / bundle</span></div>
+      <a href="svg-icons/preview.html" class="btn">Preview</a>
+      <a href="svg-icons/README.md" class="btn-outline btn">Details</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="thumb video">🎬</div>
+    <div class="card-body">
+      <h2>HyperFrames Video Templates</h2>
+      <p>5 GSAP-animated video templates: Brand Intro, Product Showcase, Social Promo, YouTube Outro, Announcement Bumper.</p>
+      <div class="tags">
+        <span class="tag">GSAP</span>
+        <span class="tag">5 templates</span>
+        <span class="tag">16:9 & 9:16</span>
+        <span class="tag">Customizable</span>
+      </div>
+      <div class="price">$19 <span>– $49 / bundle</span></div>
+      <a href="hyperframes-pack/preview.html" class="btn">Preview</a>
+      <a href="hyperframes-pack/README.md" class="btn-outline btn">Details</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Lnk.Flow Studio · Products are delivered via Gumroad · Instant download · Commercial use
+</footer>
+
+</div>
+</body>
+</html>

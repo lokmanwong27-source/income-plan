@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Icon Pack Preview – 30 Premium Business & Social Icons</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; padding: 32px; color: #212529; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  .subtitle { color: #6c757d; margin-bottom: 40px; font-size: 15px; }
+  .section { margin-bottom: 48px; }
+  .section h2 { font-size: 20px; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; margin-bottom: 20px; text-transform: capitalize; }
+  .icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; }
+  .icon-card { background: white; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: box-shadow 0.15s, transform 0.15s; cursor: default; }
+  .icon-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .icon-card svg { width: 28px; height: 28px; color: #6c5ce7; }
+  .icon-card .name { font-size: 11px; color: #868e96; text-transform: capitalize; }
+  .specs { display: flex; gap: 24px; margin: 32px 0; flex-wrap: wrap; }
+  .spec { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #495057; }
+  .spec strong { color: #212529; }
+  .cta { background: #6c5ce7; color: white; border: none; padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; margin: 32px 0; }
+  .cta:hover { background: #5a4bd1; }
+  footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e9ecef; font-size: 13px; color: #868e96; text-align: center; }
+</style>
+</head>
+<body>
+
+<header style="margin-bottom: 40px;">
+  <h1>🎨 Premium SVG Icon Pack</h1>
+  <p class="subtitle">30 handcrafted SVG icons · 3 categories · Business · Social · Tech · Ready for any project</p>
+</header>
+
+<div class="specs">
+  <div class="spec"><strong>30</strong> icons</div>
+  <div class="spec"><strong>3</strong> categories</div>
+  <div class="spec">✅ SVG format</div>
+  <div class="spec">✅ 24×24 viewBox</div>
+  <div class="spec">✅ Editable strokes</div>
+  <div class="spec">✅ MIT license</div>
+</div>
+
+<div class="section">
+  <h2>Business & Startup</h2>
+  <div class="icon-grid" id="business-grid"></div>
+</div>
+
+<div class="section">
+  <h2>Social & Communication</h2>
+  <div class="icon-grid" id="social-grid"></div>
+</div>
+
+<div class="section">
+  <h2>Technology & Coding</h2>
+  <div class="icon-grid" id="tech-grid"></div>
+</div>
+
+<div style="text-align: center;">
+  <button class="cta" onclick="alert('Available on Gumroad — instant download after purchase.')">Get the Full Pack →</button>
+  <p style="font-size: 13px; color: #868e96; margin-top: 8px;">$9 · Instant download · Commercial use</p>
+</div>
+
+<footer>
+  Premium SVG Icon Pack by Codex · MIT License · Commercial & Personal Use
+</footer>
+
+<script>
+const ICONS = {
+  business: [
+    { file: 'briefcase', name: 'Briefcase' },
+    { file: 'calendar', name: 'Calendar' },
+    { file: 'chart', name: 'Chart' },
+    { file: 'clock', name: 'Clock' },
+    { file: 'document', name: 'Document' },
+    { file: 'growth', name: 'Growth' },
+    { file: 'settings', name: 'Settings' },
+    { file: 'target', name: 'Target' },
+    { file: 'users', name: 'Users' },
+    { file: 'wallet', name: 'Wallet' },
+  ],
+  social: [
+    { file: 'bell', name: 'Bell' },
+    { file: 'comment', name: 'Comment' },
+    { file: 'hashtag', name: 'Hashtag' },
+    { file: 'heart', name: 'Heart' },
+    { file: 'link', name: 'Link' },
+    { file: 'media', name: 'Media' },
+    { file: 'message', name: 'Message' },
+    { file: 'profile', name: 'Profile' },
+    { file: 'share', name: 'Share' },
+    { file: 'star', name: 'Star' },
+  ],
+  tech: [
+    { file: 'cloud', name: 'Cloud' },
+    { file: 'code', name: 'Code' },
+    { file: 'database', name: 'Database' },
+    { file: 'gear', name: 'Gear' },
+    { file: 'key', name: 'Key' },
+    { file: 'monitor', name: 'Monitor' },
+    { file: 'server', name: 'Server' },
+    { file: 'shield', name: 'Shield' },
+    { file: 'smartphone', name: 'Smartphone' },
+    { file: 'upload', name: 'Upload' },
+  ]
+};
+
+async function loadIcon(category, icon) {
+  try {
+    const res = await fetch(`src/${category}/${icon.file}.svg`)
+    const svg = await res.text()
+    return svg
+  } catch {
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`
+  }
+}
+
+async function renderCategory(category, gridId) {
+  const grid = document.getElementById(gridId)
+  const icons = ICONS[category]
+  for (const icon of icons) {
+    const card = document.createElement('div')
+    card.className = 'icon-card'
+    const svgContent = await loadIcon(category, icon)
+    card.innerHTML = svgContent + `<span class="name">${icon.name}</span>`
+    grid.appendChild(card)
+  }
+}
+
+renderCategory('business', 'business-grid')
+renderCategory('social', 'social-grid')
+renderCategory('tech', 'tech-grid')
+</script>
+
+</body>
+</html>

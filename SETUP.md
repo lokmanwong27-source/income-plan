@@ -1,81 +1,93 @@
-# SETUP Guide — 帳號註冊指南
+# SETUP Guide — 帳號註冊指南（進度追蹤）
 
-> ⏱ 總共約 30 分鐘。完成後把 API keys / tokens 給我，接下來全部我來。
-
----
-
-## Step 1: GitHub (3 分鐘)
-
-1. 前往 https://github.com/signup
-2. 輸入 email、密碼、用戶名
-3. 驗證 email
-4. 完成後給我的東西：**你的 GitHub 用戶名**
+> ⏱ 總共約 30 分鐘。以下是進度：
+> ✅ = 已完成   ❌ = 尚未完成   🔄 = 進行中
 
 ---
 
-## Step 2: Vercel (2 分鐘)
+## ✅ Step 1: GitHub ✔️ 已完成
 
-1. 前往 https://vercel.com/signup
-2. 點「Continue with GitHub」
-3. 授權 Vercel 存取你的 GitHub
-4. 選擇 Free (Hobby) 方案
-5. 完成後給我的東西：截圖確認已登入即可
+狀態：已完成（lokmanwong27@gmail.com）
+程式碼已 push，Vercel auto-deploy 設定完成。
 
 ---
 
-## Step 3: Stripe (10 分鐘)
+## ✅ Step 2: Vercel ✔️ 已完成
 
-1. 前往 https://dashboard.stripe.com/register
-2. 用 email 註冊
-3. 填寫基本資料（姓名、地址、電話）
-4. 連結銀行帳戶（收款用）
-5. 完成後給我的東西：
-   - 到 Developers → API Keys → 給我 **Publishable Key** 和 **Secret Key**
-   - 格式像：`pk_live_xxxxxxxxx` 和 `sk_live_xxxxxxxxx`
+狀態：Vercel 已連結 GitHub，auto-deploy 啟用。
+部署 URL：https://income-plan-git-main-lokman2.vercel.app
 
 ---
 
-## Step 4: Cloudflare + 域名 (5 分鐘)
+## 🔄 Step 3: Stripe — 部分完成
 
+✅ Publishable Key 已提供：`pk_test_51TkUafCJYjGZsMP6SJHtgCkpFotlYYMq5sRj3yFh7SIx7qCQ3ypVInwcemg3YCXQ94eYAurGmqZ9IObISNts0Eup00W7siRnB2`
+
+❌ 仍然需要：**Stripe Secret Key**（sk_test_...）
+
+**操作步驟：**
+1. 登入 https://dashboard.stripe.com/
+2. 左側選單 → Developers → API Keys
+3. 複製 **Secret Key**（sk_test_... 開頭）
+4. 貼到 Vercel 專案的 Environment Variables：
+   - 到 https://vercel.com/lokmanwong27-source/income-plan/settings/environment-variables
+   - 新增變數名稱 `STRIPE_SECRET_KEY`
+   - 貼上 Secret Key 的值
+   - 按 Save
+---
+
+## ❌ Step 4: Cloudflare + 域名 — 尚未完成（需要你操作）
+
+需要的東西：一個網域名稱（~$10/年）
+
+**建議流程：**
 1. 前往 https://dash.cloudflare.com/signup
 2. 註冊免費帳號
-3. 在註冊頁買一個域名（.com 約 $10/年）
-   - 建議：`lnkflow.com` 或你喜歡的名字
-4. 完成後給我的東西：**域名名稱**
+3. 在註冊頁買一個域名（建議：`lnkflow.com` 或你喜歡的名字，約 $10/年）
+4. 把域名給我，我來綁定 Vercel 和 Stripe
+
 
 ---
 
-## Step 5: Gumroad (5 分鐘)
+## ❌ Step 5: Gumroad — 尚未完成（需要你操作）
 
+需要的東西：一個免費 Gumroad 帳號來上架數位商品
+
+**操作步驟：**
 1. 前往 https://gumroad.com/
 2. 用 email 註冊
-3. 到 Settings → Payments → 設定 payout 方式（銀行/PayPal）
-4. 完成後給我的東西：**Gumroad 用戶名**
+3. Settings → Payments → 設定 payout（銀行帳戶或 PayPal）
+4. 把 Gumroad 用戶名給我
 
 ---
 
-## Step 6: 給我 API Keys (5 分鐘)
+## 📋 已準備好上架的商品（Gumroad）
 
-把以下資訊給我（你可以截圖或貼文字到對話裡）：
+I. **React UI Component Pack** — 15 個元件 · $19（全套）/ $49（含原始碼授權）
+   - demo: `products/react-components/preview.html`
 
-```
-1. GitHub 用戶名: _________
-2. Vercel email: _________
-3. Stripe Publishable Key: pk_...
-4. Stripe Secret Key: sk_...
-5. 域名: yourdomain.com
-6. Gumroad 用戶名: _________
-```
+II. **Premium SVG Icon Pack** — 30 個圖示 · $9（單包）/ $19（全套）
+   - demo: `products/svg-icons/preview.html`
+
+III. **HyperFrames Video Templates** — 5 個模板 · $19（單個）/ $49（全套）
+   - demo: `products/hyperframes-pack/preview.html`
 
 ---
 
-## 完成 ✨
+## 🚀 已完成（不需要你做任何事）
 
-帳號開好後，我會：
-1. 把程式碼 push 到你的 GitHub
-2. 部署到 Vercel 自動上線
-3. 建立 Stripe 付款串接
-4. 準備好 Gumroad 商品檔案讓你上架
-5. 開始自動維運
+✅ GitHub repo 已建立，code 已 push
+✅ Vercel auto-deploy 已啟用
+✅ SaaS (Lnk.Flow) 前端 + Stripe 串接已開發完成
+✅ React UI Component Pack（15 個元件、preview、package.json）
+✅ SVG Icon Pack（30 個圖示、preview）
+✅ HyperFrames Video Templates（5 個模板、preview）
+✅ Automated Video Service API
 
-**接下來你只需要做一件事：收錢。**
+## ⏳ 還需要你做的（只需這 3 步）
+
+1. **Stripe Secret Key** → 貼到 Vercel env vars（5 分鐘）
+2. **註冊 Gumroad** → 上架商品開始賣（5 分鐘）
+3. **買一個域名** → $10/年（5 分鐘）
+
+完成這三步後，就開始自動收錢了 💰

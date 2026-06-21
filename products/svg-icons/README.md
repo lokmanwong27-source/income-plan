@@ -1,26 +1,24 @@
-# SVG Icon Packs — 200+ Premium Icons
+# Premium SVG Icon Pack — 30 Handcrafted Icons
 
 ## What You Get
-- 200+ handcrafted SVG icons in 5 categories
-- 3 styles: Line, Filled, Duotone
+- 30 handcrafted SVG icons in 3 categories
+- Clean line style, 24×24 viewBox
+- stroke-width 1.5, rounded line caps and joins
 - Fully editable — change colors, sizes, strokes
-- React component versions included
-- Drag-and-drop Figma/Sketch compatible
+- Drop into any project: React, Vue, HTML, Figma, Sketch
+- No external dependencies
 
 ## Categories
 | Pack | Icons | Price |
 |------|-------|-------|
-| Business & Startup | 50 icons | $9 |
-| Social Media & Marketing | 45 icons | $9 |
-| E-commerce & Shopping | 40 icons | $9 |
-| Technology & Coding | 35 icons | $9 |
-| Lifestyle & Health | 35 icons | $9 |
-| **Mega Bundle (All 5)** | **205 icons** | **$29** |
+| Business & Startup | 10 icons | $9 |
+| Social & Communication | 10 icons | $9 |
+| Technology & Coding | 10 icons | $9 |
+| **Full Bundle (All 3)** | **30 icons** | **$19** |
 
 ## File Format
 - SVG (scalable, any size)
-- React .jsx components with TypeScript types
-- PNG preview sheets
+- Open and edit in any code editor or design tool
 
 ## License
 - Personal & Commercial use
@@ -28,12 +26,8 @@
 - No attribution required
 
 ## Preview
-```
-Business icons:  💼 📊 📈 📉 📋 📝 📎 📁 🗂️ 🗄️
-Social icons:    📱 💬 ♥️ 🔄 🔗 🔔 📢 📨 📧 📬
-Tech icons:      💻 ⌨️ 🖥️ 🖱️ 📀 💾 💿 🔧 🔩 ⚙️
-```
+Open `preview.html` in a browser to see all 30 icons rendered.
 
-**Gumroad link:** Coming soon
-**Price:** $9–$29 depending on pack
+**Price:** $9 (single category) / $19 (full bundle)
 **Delivery:** Instant download after purchase
+**Buy link:** Coming soon — listing being created on Gumroad
